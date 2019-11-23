@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match with snapshot 1`] = `
+"<Fragment>
+  <GlobalStyleComponent />
+  <styled.div>
+    <header>
+      Build My Resume
+    </header>
+    <styled.p>
+      In progress...
+    </styled.p>
+  </styled.div>
+</Fragment>"
+`;
