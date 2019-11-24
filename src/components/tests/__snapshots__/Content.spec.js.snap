@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContentComp /> should match with snapshot with default values 1`] = `
+.c0 {
+  margin: 0;
+  color: #000;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+<p
+  className="c0"
+  color="#000"
+  letterSpacing="normal"
+>
+  Hello
+</p>
+`;
+
+exports[`<ContentComp /> should match with snapshot with passed props 1`] = `
+.c0 {
+  margin: 0;
+  color: red;
+  -webkit-letter-spacing: 10px;
+  -moz-letter-spacing: 10px;
+  -ms-letter-spacing: 10px;
+  letter-spacing: 10px;
+}
+
+<p
+  className="c0"
+  color="red"
+  letterSpacing="10px"
+>
+  Hello
+</p>
+`;

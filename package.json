@@ -5,8 +5,11 @@
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --inline --progress",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "update-snapshot": "jest --u",
+    "coverage": "npm run test -- --coverage && open ./coverage/lcov-report/index.html"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,10 +27,12 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^4.7.0",
     "babel-loader": "^8.0.6",
     "jest": "^24.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "styled-components": "^4.4.1"
   },
@@ -38,7 +43,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.41.2",
+    "jest-styled-components": "^6.3.4",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   }

@@ -4,12 +4,13 @@ exports[`<App /> should match with snapshot 1`] = `
 "<Fragment>
   <GlobalStyleComponent />
   <styled.div>
-    <header>
-      Build My Resume
-    </header>
-    <styled.p>
-      In progress...
-    </styled.p>
+    <Header variant=\\"contained\\" color=\\"primary\\" heading=\\"h1\\">
+      <Link to=\\"/templates\\">
+        <WithStyles(ForwardRef(Button))>
+          Choose a Template
+        </WithStyles(ForwardRef(Button))>
+      </Link>
+    </Header>
   </styled.div>
 </Fragment>"
 `;

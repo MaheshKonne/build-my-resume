@@ -1,5 +1,10 @@
 import React, {Fragment} from 'react';
 import styled, {createGlobalStyle} from "styled-components";
+import Header from "./components/Header";
+import {Button} from '@material-ui/core'
+import {Link} from "react-router-dom";
+
+
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -13,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Container = styled.div`
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,19 +27,18 @@ const Container = styled.div`
   color: white;
 `;
 
-const Content = styled.p`
-  font-size: 16px;
-`;
-
 function App() {
   return (
      <Fragment>
         <GlobalStyles />
         <Container>
-          <header>
-              Build My Resume
-          </header>
-          <Content>In progress...</Content>
+            <Header variant="contained" color="primary">
+                <Link to="/templates">
+                    <Button>
+                        Choose a Template
+                    </Button>
+                </Link>
+            </Header>
         </Container>
      </Fragment>
   );

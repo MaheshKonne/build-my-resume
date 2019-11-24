@@ -19,6 +19,10 @@ module.exports = {
                         plugins: ['@babel/plugin-proposal-object-rest-spread']
                     }
                 }
+            },
+            {
+                test: /\.(jpg|png|jpe?g|svg)$/i,
+                use: ['file-loader'],
             }
         ]
     },
@@ -32,7 +36,7 @@ module.exports = {
         })
     ],
     devServer: {  // configuration for webpack-dev-server
-        contentBase: './src/public',  //source of static assets
+        contentBase: './public',  //source of static assets
         port: 8000, // port to run dev-server
     }
 };
