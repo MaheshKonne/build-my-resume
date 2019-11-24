@@ -5,7 +5,8 @@ import Header from "../../Header";
 import {theme} from "../../../lib/theme";
 import Diamond from "../../SquareDiamond";
 import Content from "../../Content";
-
+import Chip from "@material-ui/core/Chip";
+import {FlexCell, FlexContainer} from "../../FlexBox";
 
 const TemplateHeader = styled.header`
     padding: 40px;
@@ -16,7 +17,7 @@ const TemplateHeader = styled.header`
 `;
 
 const TemplateFooter = styled.footer`
-    height: 30px;
+    height: 40px;
     background: ${props => props.theme.primary};
     border-radius: 0 0 5px 5px;
     color: white;
@@ -34,12 +35,22 @@ const TemplateBody = styled.section`
 `;
 
 const Section = styled.section`
-    background-color: ${props => props.background || theme.white}
+    background-color: ${props => props.background}
 `;
 
 const ContentWrapper = styled.section`
     padding: 30px 50px;
 `;
+
+const FlexContainerElem = FlexContainer({
+    "padding-top": "10px",
+    "margin-bottom": "30px"
+})('div');
+
+const FlexCellElem = FlexCell({
+    "min-width": "300px",
+    "margin-right": "30px"
+})('div');
 
 const Template = ({template='canva-purple-modern-resume'}) => {
     const selectedTheme = theme[template];
@@ -47,49 +58,52 @@ const Template = ({template='canva-purple-modern-resume'}) => {
     return (
         <Fragment>
             <TemplateHeader theme={selectedTheme}>
-                <Header>{data.name}</Header>
-                <Header heading="h4">{data.role}</Header>
+                <Header color={theme.white}>{data.name}</Header>
+                <Header color={theme.white} heading="h4">{data.role}</Header>
             </TemplateHeader>
             <TemplateBody theme={selectedTheme}>
                 <ContentWrapper>
                     <Header heading="h2" color={selectedTheme.primary} letterSpacing="3px">{data.profile.title}</Header>
+                    <Content>{data.profile.description}</Content>
                 </ContentWrapper>
                 <Section background={selectedTheme.quaternary}>
                     <ContentWrapper>
                         <Header heading="h2" color={selectedTheme.primary} letterSpacing="3px">{data.experience.title}</Header>
-                        {data.experience.details.map(item => (
-                            <>
-                                <Content>{item.role}</Content>
-                                <Content>{item.company}</Content>
-                                <Content>{item.duration}</Content>
+                        {data.experience.details.map((item, i) => (
+                            <FlexContainerElem key={`${item.company}-${i}`}>
+                                <FlexCellElem>
+                                    <Content>{item.role}</Content>
+                                    <Content>{item.company}</Content>
+                                    <Content>{item.duration}</Content>
+                                </FlexCellElem>
                                 <Content>{item.description}</Content>
-                            </>
+                            </FlexContainerElem>
                         ))}
                     </ContentWrapper>
                 </Section>
                 <ContentWrapper>
                     <Header heading="h2" color={selectedTheme.primary} letterSpacing="3px">{data.education.title}</Header>
                     {data.education.details.map(item => (
-                        <>
+                        <FlexCellElem key={item.year}>
                             <Content>{item.course}</Content>
                             <Content>{item.university}</Content>
                             <Content>{item.year}</Content>
                             <Content>{item.grade}</Content>
-                        </>
+                        </FlexCellElem>
                     ))}
                 </ContentWrapper>
                 <ContentWrapper>
                     <Header heading="h2" color={selectedTheme.primary} letterSpacing="3px">SKILLS</Header>
-                    {data.skills.map(skill => <Content>{skill}</Content>)}
+                    {data.skills.map(skill => <Chip key={skill} variant="outlined" color="red" label={skill} />)}
                 </ContentWrapper>
             </TemplateBody>
             <TemplateFooter theme={selectedTheme}>
                 <FooterWrapper>
-                    <Header heading="h4">{data.contact.email}</Header>
+                    <Header heading="h4" color={theme.white}>{data.contact.email}</Header>
                     <Diamond />
-                    <Header heading="h4">{data.contact.website}</Header>
+                    <Header heading="h4" color={theme.white}>{data.contact.website}</Header>
                     <Diamond />
-                    <Header heading="h4">{data.contact.phone}</Header>
+                    <Header heading="h4" color={theme.white}>{data.contact.phone}</Header>
                 </FooterWrapper>
             </TemplateFooter>
         </Fragment>

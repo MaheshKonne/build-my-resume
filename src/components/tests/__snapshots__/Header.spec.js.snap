@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match with snapshot with default values 1`] = `
+.c0 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #000;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+}
+
+<h1
+  className="c0"
+>
+  Hello
+</h1>
+`;
+
+exports[`<Header /> should match with snapshot with passed props 1`] = `
+.c0 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: red;
+  -webkit-letter-spacing: 10px;
+  -moz-letter-spacing: 10px;
+  -ms-letter-spacing: 10px;
+  letter-spacing: 10px;
+}
+
+<h2
+  className="c0"
+>
+  Hello
+</h2>
+`;

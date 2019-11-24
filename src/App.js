@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import {Button} from '@material-ui/core'
 import {Link} from "react-router-dom";
 
-
-
 const GlobalStyles = createGlobalStyle`
     body {
       margin: 0;
@@ -33,9 +31,9 @@ function App() {
         <GlobalStyles />
         <Container>
             <Header variant="contained" color="primary">
-                <Link to="/templates">
+                <Link to="/template">
                     <Button>
-                        Choose a Template
+                        Create Resume
                     </Button>
                 </Link>
             </Header>

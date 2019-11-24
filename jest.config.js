@@ -1,23 +1,25 @@
 module.exports = {
   moduleDirectories: ['<rootDir>/src', 'node_modules'],
-  setupFilesAfterEnv: ['./setupEnzyme.js'],
+  setupFilesAfterEnv: ['./setupEnzymeAndJestStyledComps.js'],
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx}'],
   coverageReporters: ['json', 'lcov', 'text-summary'],
   coverageThreshold: {
     global: {
-      statements: 25,
-      branches: 20,
-      functions: 20,
-      lines: 25,
+      statements: 90,
+      branches: 85,
+      functions: 90,
+      lines: 90,
     },
   },
   testPathIgnorePatterns: [
-    './setupEnzyme.js',
+    './setupEnzymeAndJestStyledComps.js',
     'coverage',
     './node_modules/',
+
   ],
   coveragePathIgnorePatterns: [
     './src/static/',
+      './src/index.js'
   ],
 };

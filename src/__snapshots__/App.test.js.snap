@@ -5,9 +5,9 @@ exports[`<App /> should match with snapshot 1`] = `
   <GlobalStyleComponent />
   <styled.div>
     <Header variant=\\"contained\\" color=\\"primary\\" heading=\\"h1\\">
-      <Link to=\\"/templates\\">
+      <Link to=\\"/template\\">
         <WithStyles(ForwardRef(Button))>
-          Choose a Template
+          Create Resume
         </WithStyles(ForwardRef(Button))>
       </Link>
     </Header>
