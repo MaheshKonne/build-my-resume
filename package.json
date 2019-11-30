@@ -9,7 +9,10 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "update-snapshot": "jest --u",
-    "coverage": "npm run test -- --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "npm run test -- --coverage && open ./coverage/lcov-report/index.html",
+    "homepage": "https://maheshkonne.github.io/build-my-resume",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,12 +32,16 @@
   "dependencies": {
     "@material-ui/core": "^4.7.0",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "gh-pages": "^2.1.1",
     "jest": "^24.9.0",
+    "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
