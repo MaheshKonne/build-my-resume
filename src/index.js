@@ -4,6 +4,10 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import App from './App';
 import Template from "./components/templates/purple-modern/Template";
 
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode...!');
+}
+
 const routing = (
     <Router>
         <div>

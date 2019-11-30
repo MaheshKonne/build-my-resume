@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --inline --progress",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --confi webpack.prod.js",
     "eject": "react-scripts eject",
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
